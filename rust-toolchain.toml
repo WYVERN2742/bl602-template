@@ -1,0 +1,6 @@
+# toolchain to ensure .bin compilation for riscv systems
+# thanks to https://github.com/melastmohican/pinecone-blinky for the fix
+[toolchain]
+channel = "nightly-2022-12-25"
+components = [ "rust-src", "rustfmt" ]
+targets = [ "riscv32imac-unknown-none-elf" ]

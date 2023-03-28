@@ -1,0 +1,7 @@
+# Rust build and tool files.
+/target/
+Cargo.lock
+**/*.rs.bk
+
+# Ignore compiled bins.
+/*.bin

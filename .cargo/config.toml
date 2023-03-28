@@ -1,0 +1,12 @@
+[target.riscv32imac-unknown-none-elf]
+rustflags = [
+  # Memory partition table (in root folder)
+  "-C", "link-arg=-Tmemory.x",
+
+  # linkage between hal and bl602 (provided by a dependencies)
+  "-C", "link-arg=-Tlink.x",
+  "-C", "link-arg=-Thal_defaults.x",
+]
+
+[build]
+target = "riscv32imac-unknown-none-elf"

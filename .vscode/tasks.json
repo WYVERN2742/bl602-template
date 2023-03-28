@@ -1,0 +1,41 @@
+{
+	"version": "2.0.0",
+	"tasks": [
+		{
+			"type": "cargo",
+			"command": "build",
+			"problemMatcher": [
+				"$rustc"
+			],
+			"label": "cargo: build",
+			"presentation": {
+				"echo": true,
+				"reveal": "silent",
+				"focus": false,
+				"panel": "dedicated",
+				"showReuseMessage": false,
+				"clear": true
+			},
+			"group": {
+				"kind": "build",
+				"isDefault": true
+			},
+			"detail": "Build and compile into a .bin"
+		},
+		{
+			"type": "cargo",
+			"command": "blflash",
+			"args": [
+				"--release",
+				"--initial-baud-rate", "1000000",
+				"--baud-rate", "1000000",
+				"--port", "COM3"
+			],
+			"problemMatcher": [
+				"$rustc"
+			],
+			"label": "cargo: flash",
+			"detail": "Build and flash to connected BL602 device"
+		}
+	]
+}
