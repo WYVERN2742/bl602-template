@@ -16,7 +16,7 @@ rustup component add llvm-tools-preview --toolchain nightly-2022-12-25
 rustup target add riscv32imac-unknown-none-elf
 
 cargo install cargo-binutils
-cargo install cargo-blflash
+cargo install --git https://github.com/spacemeowx2/blflash cargo-blflash
 ```
 
 These commands add the required toolchain targets along with binary flashing for easy development (No need for GUIs anymore 😉).
