@@ -30,5 +30,13 @@ cargo objcopy --release -- -O binary bl602-template.bin
 
 The preferred method is to use `blflash` directly with cargo. (I recommend picking a baudrate across all projects and sticking to it)
 ```bash
+# On windows:
 cargo blflash --release --initial-baud-rate 1000000 --baud-rate 1000000 --port COM3
+
+# On Linux:
+cargo blflash --release --initial-baud-rate 1000000 --baud-rate 1000000 --port /dev/ttyUSB0
 ```
+
+> [!NOTE]
+> If you're on linux, remember to have rw permission to your serial socket.
+> You can do this by adding your user to the correct group; e.g `dialout`
